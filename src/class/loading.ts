@@ -1,9 +1,14 @@
+import LoadingType from "../enum/LoadingEnum";
+
 export class LoadingDom {
+    loadingType : LoadingType;
     containerDiv: HTMLDivElement
     boxDiv: HTMLDivElement
     loadingDiv: HTMLDivElement
 
-    Init(): HTMLDivElement {
+    Init(loadingType :LoadingType): HTMLDivElement {
+        console.log(loadingType);
+        this.loadingType = loadingType;
         this.containerDiv = document.createElement('div');
         this.boxDiv = document.createElement('div');
         this.loadingDiv = document.createElement('div');

@@ -2,22 +2,22 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.ts", // ë²ˆë“¤ë§ ì‹œì‘ ìœ„ì¹˜
+    entry: "./src/index.ts", // ë²ˆë“¤ë§? ?‹œ?‘ ?œ„ì¹?
     output: {
-        path: path.join(__dirname, "/dist"), // ë²ˆë“¤ ê²°ê³¼ë¬¼ ìœ„ì¹˜
+        path: path.join(__dirname, "/test"), // ë²ˆë“¤ ê²°ê³¼ë¬? ?œ„ì¹?
         filename: "bundle.js",
     },
     module: {
         rules: [
             {
-                test: /[\.js]$/, // .js ì— í•œí•˜ì—¬ babel-loaderë¥¼ ì´ìš©í•˜ì—¬ transpiling
+                test: /[\.js]$/, // .js ?— ?•œ?•˜?—¬ babel-loaderë¥? ?´?š©?•˜?—¬ transpiling
                 exclude: /node_module/,
                 use: {
                     loader: "babel-loader",
                 },
             },
             {
-                test: /\.ts$/, // .ts ì— í•œí•˜ì—¬ ts-loaderë¥¼ ì´ìš©í•˜ì—¬ transpiling
+                test: /\.ts$/, // .ts ?— ?•œ?•˜?—¬ ts-loaderë¥? ?´?š©?•˜?—¬ transpiling
                 exclude: /node_module/,
                 use: {
                     loader: "ts-loader",
@@ -30,17 +30,17 @@ module.exports = {
         ],
     },
     resolve: {
-        modules: [path.join(__dirname, "src"), "node_modules"], // ëª¨ë“ˆ ìœ„ì¹˜
+        modules: [path.join(__dirname, "src"), "node_modules"], // ëª¨ë“ˆ ?œ„ì¹?
         extensions: [".ts", ".js"],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./index.html", // í…œí”Œë¦¿ ìœ„ì¹˜
+            template: "./src/index.html", // ?…œ?”Œë¦? ?œ„ì¹?
         }),
     ],
     devServer: {
-        host: "localhost", // live-server host ë° port
+        host: "localhost", // live-server host ë°? port
         port: 5500,
     },
-    mode: "development", // ë²ˆë“¤ë§ ëª¨ë“œ development / production
+    mode: "development", // ë²ˆë“¤ë§? ëª¨ë“œ development / production
 };
