@@ -12,12 +12,14 @@ function ButtonDOMTest(name: string): HTMLElement {
 }
 */
 
+const test = document.getElementById("test");
 const LoadDom = new LoadingDom();
-document.body.appendChild(LoadDom.Init(LoadingType.Front));
+test.appendChild(LoadDom.Init(LoadingType.Front));
 
 
-LoadDom.Loading();
-
+LoadDom.Loading(600);
+/*
 setTimeout(()=>{
     LoadDom.Stop();
 }, 3000)
+*/

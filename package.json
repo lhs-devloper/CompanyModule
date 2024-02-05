@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
+    "dev:start": "webpack serve --open",
     "build": "webpack",
     "ts:build": "npx tsc --build"
   },

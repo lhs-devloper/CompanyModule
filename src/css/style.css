@@ -1,0 +1,10 @@
+.loading-box{
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.loading-bar {
+    width: 0;
+    height: 30px;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+}
