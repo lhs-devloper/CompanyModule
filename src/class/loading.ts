@@ -9,9 +9,9 @@ export class LoadingDom {
     loadingDiv: HTMLDivElement;
     
     Init(loadingType?: LoadingType, loadingStyle?: LoadingStyle): HTMLDivElement {
-        // Ç¥ÁØ ·Îµù ¹Ù
+        // Ç¥ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½
         loadingStyle === undefined ? this.loadingStyle = LoadingStyle.Bar : this.loadingStyle = loadingStyle;
-        // Ç¥ÁØ ·Îµù Å¸ÀÔÀº ÇÁ·ÐÆ®
+        // Ç¥ï¿½ï¿½ ï¿½Îµï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
         loadingType === undefined ? this.loadingType = LoadingType.Front : this.loadingType = loadingType;
         
         this.containerDiv = document.createElement('div');
@@ -40,14 +40,17 @@ export class LoadingDom {
         
                 if (progress >= 100) {
                   clearInterval(interval);
+                  this.LoadingStop;
                 }
             }, loadingSpeed);  
+
+
         })
         
     }
-    Stop(): void {
+    LoadingStop(): void {
         this.containerDiv.classList.remove("container");
         this.boxDiv.classList.remove("loading-box")
-        this.loadingDiv.classList.remove("loading"+this.loadingStyle);
+        this.loadingDiv.classList.remove("loading-"+this.loadingStyle);
     }
 }

@@ -17,7 +17,7 @@ const LoadDom = new LoadingDom();
 test.appendChild(LoadDom.Init(LoadingType.Front));
 
 
-LoadDom.Loading(600);
+LoadDom.Loading(60);
 /*
 setTimeout(()=>{
     LoadDom.Stop();
